@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/javascript/game.js">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<title>Week 4 Game</title>
+</head>
+<body>
+	<div class="navbar navbar-default">
+		<div class="container">
+			<h1>Crystal Game</h1>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 textbox">
+				<br>
+				You will be given a random number at the start of the game.
+				<br>
+				<br>
+				There are four crystals.  By clicking on a crystal you will add a specific amount of points to your total score.
+				<br>
+				<br>
+				You win the game by matching your total score to the random number.  You lose the game if your total score goes above the random number.
+				<br>
+				<br>
+				The value of each crystal is hidden from you until you click on it.
+				<br>
+				<br>
+				Each time when the game starts, the game will change the value of each crystal.
+				<br>
+			</div>
+			<div class="col-md-6 totalsbox">
+				<div class="row">
+					<div class="col-md-6">
+						Random Number
+					</div>
+					<div class="col-md-6">
+						Current Total
+					</div>
+				</div>
+			</div>		
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<button type="button" class="btn btn-default">
+						<img src="assets/images/redGem.jpeg" width="100">
+						<p id="redGem"></p>
+					</button>
+				</div>
+				<div class="col-md-3">
+					<button type="button" class="btn btn-default">
+						<img src="assets/images/clearGem.png" width="100"><p id="clearGem"></p>
+					</button>
+				</div>
+				<div class="col-md-3">
+					<button type="button" class="btn btn-default">
+						<img src="assets/images/blueGem.png" width="100">
+						<p id="blueGem"></p>
+					</button>
+				</div>
+				<div class="col-md-3">
+					<button type="button" class="btn btn-default">
+						<img src="assets/images/greenGem.jpeg" width="100">
+						<p id="greenGem"></p>
+					</button>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">Wins</div>
+				<div class="col-md-6">Losses</div>
+			</div>
+		</div>	
+	</div>
+</body>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+</html>
