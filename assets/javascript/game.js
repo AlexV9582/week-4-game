@@ -53,6 +53,17 @@ $(".start").on("click", function() {
 });
 
 $(".btn-default").on("click", function(){
+	if (inProgress === false) {
+		randomNumGen();
+		redNumGen();
+		greenNumGen();
+		clearNumGen();
+		blueNumGen();
+		$(".randomNumber").append(randomNumber);
+		currentTotal = 0;
+		inProgress = true;
+	};
+
 	if (inProgress === true && this.value === "red") {
 		currentTotal += redNumber;
 		$(".currentTotal").html(currentTotal);
@@ -66,16 +77,17 @@ $(".btn-default").on("click", function(){
 		currentTotal += blueNumber;
 		$(".currentTotal").html(currentTotal);
 	};
+
 	if (currentTotal === randomNumber) {
 		wins++;
 		inProgress === false;
-		alert("You Win!!!");
+		//alert("You Win!!!");
 	}else if (currentTotal > randomNumber) {
 		losses++;
 		inProgress === false;
-		alert("You Lose...");
-	}
-})
+		//alert("You Lose...");
+	};
+});
 
 
 
