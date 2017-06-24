@@ -8,13 +8,14 @@ var greenNumber
 var blueNumber
 var inProgress = false
 
-$(".currentTotal").append(currentTotal);
-$(".wins").append(wins)
-$(".losses").append(losses)
+$(".currentTotal").html(currentTotal);
+$(".wins").html(wins)
+$(".losses").html(losses)
 
 function randomNumGen() {
-	randomNumber = Math.floor((Math.random() * 120) + 19)
-	console.log(randomNumber)
+	randomNumber = Math.floor((Math.random() * 120) + 19);
+	console.log(randomNumber);
+	$(".randomNumber").html(randomNumber);
 }
 
 function redNumGen() {
@@ -44,7 +45,6 @@ $(".start").on("click", function() {
 		greenNumGen();
 		clearNumGen();
 		blueNumGen();
-		$(".randomNumber").append(randomNumber);
 		currentTotal = 0;
 		inProgress = true;
 		wins = 0
@@ -53,16 +53,7 @@ $(".start").on("click", function() {
 });
 
 $(".btn-default").on("click", function(){
-	if (inProgress === false) {
-		randomNumGen();
-		redNumGen();
-		greenNumGen();
-		clearNumGen();
-		blueNumGen();
-		$(".randomNumber").append(randomNumber);
-		currentTotal = 0;
-		inProgress = true;
-	};
+	
 
 	if (inProgress === true && this.value === "red") {
 		currentTotal += redNumber;
@@ -80,12 +71,28 @@ $(".btn-default").on("click", function(){
 
 	if (currentTotal === randomNumber) {
 		wins++;
-		inProgress === false;
-		//alert("You Win!!!");
+		alert("You Win!!!");
+		randomNumGen();
+		redNumGen();
+		greenNumGen();
+		clearNumGen();
+		blueNumGen();
+		currentTotal = 0;
+		$(".wins").html(wins);
+		$(".losses").html(losses);
+		$(".currentTotal").html(currentTotal);
 	}else if (currentTotal > randomNumber) {
 		losses++;
-		inProgress === false;
-		//alert("You Lose...");
+		alert("You Lose...");
+		randomNumGen();
+		redNumGen();
+		greenNumGen();
+		clearNumGen();
+		blueNumGen();
+		currentTotal = 0;
+		$(".wins").html(wins);
+		$(".losses").html(losses);
+		$(".currentTotal").html(currentTotal);
 	};
 });
 
